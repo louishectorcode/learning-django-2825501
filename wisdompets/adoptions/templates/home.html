@@ -1,13 +1,19 @@
-<body>
-	<h1>Pets</h1>
 
-	<ul>
-	{% for pet in pets %} 
-	<li>
+<div>
+{% for pet in pets %}
+	<div class="petName">
 		<a href="{% url 'pet_detail' pet.id %}">
-			{{ pet.name|capfirst }}
+		<h3>{{ pet.name|capfirst }}</h3>
 		</a>
-	</li>
-	{% endfor %}
-	</ul>
-</body>
+
+		<p>Species: {{ pet.species }}</p>
+
+		{% if pet.breed %}
+			<p>Breed: {{ pet.breed }}</p>
+		{% endif %}
+
+		<p class="hidden">{{ pet.description }}</p>
+	</div>
+
+{% endfor %}
+</div>
