@@ -1,0 +1,13 @@
+<body>
+	<h1>Pets</h1>
+
+	<ul>
+	{% for pet in pets %} 
+	<li>
+		<a href="{% url 'pet_detail' pet.id %}">
+			{{ pet.name|capfirst }}
+		</a>
+	</li>
+	{% endfor %}
+	</ul>
+</body>
