@@ -1,7 +1,5 @@
-<div>
-	<a href="{% url 'home' %}"><h5>Go Back</h5></a>
-</div>
-
+{% extends "base.html" %}
+{% block content %}
 <div>
 	<h3>{{ pet.name|capfirst }}</h3>
 	<p>{{ pet.species }}</p>
@@ -27,3 +25,4 @@
 	<p>Submitted on: {{ pet.submission_date|date:"d M Y" }}</p>
 	<p>{{pet.description }}</p>
 </div>
+{% endblock %}
